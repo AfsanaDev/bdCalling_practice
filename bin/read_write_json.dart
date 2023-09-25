@@ -9,9 +9,11 @@ void main() async {
     var info = jsonDecode(value);
     print("Decode type is: ${info.runtimeType}");
     //   List<Info>
-    List<Book> books =[];
+    List<Books> books =[];
     for(var map in info){
-      var post = Books(title:map['title'], author:map['author']);
+      // var books = Books(map['title'] , author:map['author'], title: '');
+      var books = Books("Gobeshonr hathe khori", "Ragib Hasan", 300, title: 'Gobeshonr hathe khori',
+      author:"Ragib Hasan" );
     }
     for (var p in info) {
 
@@ -23,6 +25,19 @@ void main() async {
 
     }
   });
+}
+
+
+
+class Books {
+  String? title;
+  String? author;
+  int? price;
+
+  Books( this.title, this.author, this.price, {required title, required author});
+  void show(){
+
+  }
 }
 
 
